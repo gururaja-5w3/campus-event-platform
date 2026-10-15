@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBKRIST CampusVibe</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">CV</span><span><b>CampusVibe</b><small>NBKRIST • Campus events</small></span></a>
+    <nav><a href="#events">Explore events</a><a href="#how">How it works</a><button id="loginOpen" class="btn btn-light">Login</button></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR CAMPUS. YOUR STAGE.</span>
+        <h1>Make campus<br><em>memorable.</em></h1>
+        <p>Discover open mics, cultural fests, workshops, and student events at NBKRIST — all in one place.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#events">Explore events <span>↗</span></a><button id="registerOpen" class="btn btn-outline">Join CampusVibe</button></div>
+        <div class="hero-note"><span class="live-dot"></span> Built for the NBKRIST campus community</div>
+      </div>
+      <div class="hero-art">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="poster"><span class="poster-tag">CAMPUS SPOTLIGHT</span><div class="poster-mic">♫</div><p>THE STAGE<br><strong>IS YOURS.</strong></p><small>OPEN MIC • MUSIC • POETRY</small></div>
+        <div class="floating-card"><span class="mini-icon">✦</span><span><b>Find your people</b><small>One campus, many stories</small></span></div>
+      </div>
+    </section>
+    <section class="section" id="events">
+      <div class="section-head"><div><span class="eyebrow">WHAT'S HAPPENING</span><h2>Find your next <em>moment.</em></h2></div><span class="section-caption">Events at NBKRIST</span></div>
+      <div class="filters"><button class="filter active" data-filter="All">All events</button><button class="filter" data-filter="Open Mic">Open mic</button><button class="filter" data-filter="Cultural">Cultural</button><button class="filter" data-filter="Technical">Technical</button><button class="filter" data-filter="Workshop">Workshops</button></div>
+      <div id="eventGrid" class="event-grid"><div class="loading">Loading campus events…</div></div>
+      <p id="eventMessage" class="message"></p>
+    </section>
+    <section class="how" id="how"><div><span class="eyebrow">SIMPLE BY DESIGN</span><h2>From discovery<br>to <em>front row.</em></h2></div><div class="steps"><article><span>01</span><h3>Discover</h3><p>Find campus events that match your interests.</p></article><article><span>02</span><h3>Book</h3><p>Reserve your place and get a unique ticket code.</p></article><article><span>03</span><h3>Show up</h3><p>Bring your ticket and enjoy the experience.</p></article></div></section>
+    <section class="admin-strip"><div><span class="eyebrow">ORGANIZED FOR CAMPUS</span><h2>Good events start<br>with <em>good people.</em></h2></div><p>Organizers can propose events. The CampusVibe admin reviews and approves them before they appear to students.</p><button id="adminOpen" class="btn btn-dark">Admin sign in →</button></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">CV</span><span><b>CampusVibe</b><small>NBKRIST</small></span></a><span>Made for campus life · Student project</span></footer>
+
+  <dialog id="authDialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Close">×</button></form>
+    <div class="dialog-head"><span class="eyebrow">WELCOME TO CAMPUSVIBE</span><h2 id="authTitle">Sign in</h2><p id="authSub">Use your account to continue.</p></div>
+    <form id="authForm" class="auth-form">
+      <label id="nameWrap" class="hidden">Full name<input id="fullName" autocomplete="name" placeholder="Your full name"></label>
+      <label>Email address<input id="email" type="email" autocomplete="username" required placeholder="you@example.com"></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" required minlength="8" placeholder="At least 8 characters"></label>
+      <button id="authSubmit" class="btn btn-primary full" type="submit">Sign in</button>
+      <p id="authError" class="message"></p>
+    </form>
+    <p class="switch-auth" id="switchAuth">New here? <button type="button" id="switchMode">Create a student account</button></p>
+    <p class="dialog-foot">Admin accounts are provisioned securely by the application owner.</p>
+  </dialog>
+  <dialog id="dashboardDialog" class="wide-dialog">
+    <form method="dialog" class="dialog-close"><button aria-label="Close">×</button></form>
+    <div class="dialog-head"><span class="eyebrow">YOUR CAMPUSVIBE</span><h2 id="dashboardTitle">Dashboard</h2><p id="dashboardSubtitle"></p></div>
+    <div id="dashboardContent"></div>
+    <button id="logoutBtn" class="btn btn-outline">Sign out</button>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
